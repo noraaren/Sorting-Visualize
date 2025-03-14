@@ -37,6 +37,35 @@ async function bubbleSort() {
     }
 }
 
+
+async function insertionSort() {
+    let bars = document.querySelectorAll(".bar");
+
+    for (let i = 1; i < bars.length; i++) { 
+        let keyHeight = bars[i].style.height;
+        let keyValue = bars[i].getAttribute("data-value");
+        let j = i - 1;
+
+        bars[i].style.backgroundColor = "red"; // Highlight current key
+
+        while (j >= 0 && parseInt(bars[j].getAttribute("data-value")) > parseInt(keyValue)) {
+            bars[j + 1].style.height = bars[j].style.height;
+            bars[j + 1].setAttribute("data-value", bars[j].getAttribute("data-value"));
+            
+            bars[j].style.backgroundColor = "yellow"; // Highlight comparison
+            await new Promise((resolve) => setTimeout(resolve, 200)); // Delay for visualization
+            
+            bars[j].style.backgroundColor = "steelblue"; // Reset color
+            j = j - 1;
+        }
+
+        bars[j + 1].style.height = keyHeight;
+        bars[j + 1].setAttribute("data-value", keyValue);
+
+        bars[i].style.backgroundColor = "steelblue"; // Reset key color
+    }
+}
+
 // Swap function
 function swap(bar1, bar2) {
     let tempHeight = bar1.style.height;
