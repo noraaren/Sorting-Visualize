@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sorting Visualizer</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sorting Visualizer</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-    <div id="options">
-        <button onclick="generateBars()">Generate Bars</button>
-        <button onclick="insertionSort()">Insertion Sort</button>
-        <button onclick="bubbleSort()">Bubble Sort</button>
-    </div>
-    <div id="container"></div>
-    <script src="script.js"></script>
+  <div id="options">
+    <button onclick="generateBars()">Generate Bars</button>
+    <button onclick="insertionSort()">Insertion Sort</button>
+    <button onclick="bubbleSort()">Bubble Sort</button>
+    <!-- give this button an id instead of inline onclick -->
+    <button id="binarySearchBtn">Binary Search</button>
+  </div>
+  <div id="message"></div>   <!-- to show “Click a bar to pick” -->
+  <div id="container"></div>
+  <script src="script.js"></script>
 </body>
 </html>
